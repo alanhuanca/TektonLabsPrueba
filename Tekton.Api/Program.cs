@@ -1,11 +1,20 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Reflection;
 using Tekton.Api.Middleware;
 using Tekton.Application;
 using Tekton.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+const string logPath = "../log/serilog_example-.log";
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File(logPath, rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 // Add services to the container.
 
@@ -60,6 +69,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<TimeLoggingMiddleware>();
 
 app.UseHttpsRedirection();
 

@@ -33,7 +33,7 @@ namespace Tekton.Application.Tests.Features.Products.CreateProduct
             _logger = new Mock<ILogger<CreateProductCommandHandler>>();
 
 
-            MockProductRepository.AddDataStreamerRepository(_unitOfWork.Object.TektonLabsDbContext);
+            MockProductRepository.AddDataProductRepository(_unitOfWork.Object.TektonLabsDbContext);
         }
 
         [Fact]

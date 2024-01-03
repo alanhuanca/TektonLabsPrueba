@@ -13,12 +13,12 @@ namespace Tekton.Application.Tests.Mocks
         {
             Guid dbContextId = Guid.NewGuid();
             var options = new DbContextOptionsBuilder<TektonLabsDbContext>()
-                .UseInMemoryDatabase(databaseName: $"StreamerDbContext-{dbContextId}")
+                .UseInMemoryDatabase(databaseName: $"ProductDbContext-{dbContextId}")
                 .Options;
 
-            var streamerDbContextFake = new TektonLabsDbContext(options);
-            streamerDbContextFake.Database.EnsureDeleted();
-            var mockUnitOfWork = new Mock<UnitOfWork>(streamerDbContextFake);
+            var productDbContextFake = new TektonLabsDbContext(options);
+            productDbContextFake.Database.EnsureDeleted();
+            var mockUnitOfWork = new Mock<UnitOfWork>(productDbContextFake);
 
 
             return mockUnitOfWork;

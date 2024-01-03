@@ -5,7 +5,7 @@ Repositorio que resuelve prueba técnica.
 ## Requerimientos para correr en tu ambiente
 - [.NET 8](https://dotnet.microsoft.com/download/dotnet)
 - [Sql Server 2019](https://www.microsoft.com/es-es/sql-server/sql-server-downloads)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community/) or [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/community/) o [Visual Studio Code](https://code.visualstudio.com/)
 
 
 ## Tecnologías  utlizadas en el proyecto
@@ -17,10 +17,14 @@ Repositorio que resuelve prueba técnica.
 - AutoMapper
 - Entity Framework Core
 - SQL SERVER
+- Lazy Caché
+- Logging
 
 **Unit Tests / Integration Tests**
 
 - XUnit
+- Moq
+- AutoFixture
 
 ## Arquitecturas
 
@@ -67,6 +71,10 @@ Repositorio que resuelve prueba técnica.
 | `Tekton.Dominio`         | `Librería` | Proyecto de dominio        |
 | `Tekton.Application`     | `Librería` | Proyecto de aplicación     |
 
+## Consumo de Api Externa en https://mockapi.io/
+```bash
+https://659424861493b011606a000f.mockapi.io/api/v1/ApiDiscount/1
+```
 
 ## Autor
 

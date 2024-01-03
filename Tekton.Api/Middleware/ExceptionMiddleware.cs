@@ -1,17 +1,25 @@
 ﻿using System.Net;
 using Tekton.Application.Exceptions;
-using Newtonsoft.Json;
-using System.Net;
+using Newtonsoft.Json; 
 using Tekton.Api.Errors;
 
 namespace Tekton.Api.Middleware
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
         private readonly IHostEnvironment _env;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="next"></param>
+        /// <param name="logger"></param>
+        /// <param name="env"></param>
         public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
         {
             _next = next;
@@ -19,11 +27,18 @@ namespace Tekton.Api.Middleware
             _env = env;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                await _next(context);
+                await Task.Delay(100);
+                await _next(context); 
+                await Task.Delay(100);
             }
             catch (Exception ex)
             {

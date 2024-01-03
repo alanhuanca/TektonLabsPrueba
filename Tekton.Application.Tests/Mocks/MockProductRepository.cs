@@ -12,7 +12,7 @@ namespace Tekton.Application.Tests.Mocks
 {
     public static class MockProductRepository
     {
-        public static void AddDataStreamerRepository(TektonLabsDbContext tektonDbContextFake)
+        public static void AddDataProductRepository(TektonLabsDbContext tektonDbContextFake)
         {
             var fixture = new Fixture();
             fixture.Behaviors.Add(new OmitOnRecursionBehavior());

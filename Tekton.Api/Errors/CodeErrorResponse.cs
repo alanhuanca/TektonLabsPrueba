@@ -1,11 +1,25 @@
 ﻿namespace Tekton.Api.Errors
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CodeErrorResponse
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int StatusCode { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string? Message { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="statusCode"></param>
+        /// <param name="message"></param>
         public CodeErrorResponse(int statusCode, string? message = null)
         {
             StatusCode = statusCode;
