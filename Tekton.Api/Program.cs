@@ -8,7 +8,7 @@ using Tekton.Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-const string logPath = "../log/serilog_example-.log";
+const string logPath = "../log/toktenlabs-.log";
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File(logPath, rollingInterval: RollingInterval.Day)
@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Prueba Técnica Tekton",
-        Description = "Proyecto desarrollado para prueba técnica de la empresa Tekton",
+        Description = "Proyecto desarrollado para prueba técnica de la empresa TektonLabs",
         TermsOfService = new Uri("https://www.tektonlabs.com/terms"),
         Contact = new OpenApiContact
         {
@@ -68,6 +68,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//Midlewares
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<TimeLoggingMiddleware>();
 
